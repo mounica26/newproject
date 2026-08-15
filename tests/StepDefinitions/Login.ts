@@ -16,7 +16,13 @@ Given('User is on Facebook login page', async function () {
 });
 
 When('User enters valid username and password', async function () {
-    await page.fill('input[name="email"]', 'your_username');
-    await page.fill('input[name="pass"]', 'your_password');
-    await page.click('button[name="login"]');
+    await page.pause();
+    await page.getByRole('textbox', { name: 'Email or mobile number' }).fill('Mounica26@gmail.com')
+    await page.getByRole('textbox', { name: 'Password' }).fill('Mounica@26');
+
+});
+Then('User should be redirected to the homepage', async function () {
+    await page.getByRole('button', { name: 'Log In' }).click();
+    await page.waitForLoadState('networkidle'); 
+    
 });
