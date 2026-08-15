@@ -1,0 +1,16 @@
+{
+  "name": "playwright-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require ts-node/register --require tests/StepDefinitions/**/*.ts tests/Feature/**/*.feature --require tests/utils/cucumbertimeouts.ts"
+  },
+  "keywords": [],
+  "type": "module",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
